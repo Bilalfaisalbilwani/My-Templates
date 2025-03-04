@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Template Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h2>TemplateHub</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+                <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container page-content">
+        <h1>About Our Services</h1>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-pencil-ruler service-icon"></i>
+                <h3>Custom Design</h3>
+                <p>We create unique, professional templates tailored to your brand identity and business needs.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt service-icon"></i>
+                <h3>Responsive Templates</h3>
+                <p>All our templates are fully responsive and work perfectly on all devices and screen sizes.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-code service-icon"></i>
+                <h3>Clean Code</h3>
+                <p>Our templates are built with clean, well-documented code following best practices.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-clock service-icon"></i>
+                <h3>Quick Setup</h3>
+                <p>Get your website up and running quickly with our easy-to-use templates and documentation.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
