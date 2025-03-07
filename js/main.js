@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const templatesGrid = document.getElementById('templatesGrid');
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
-    const modal = document.getElementById('previewModal');
+    const previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
     const previewFrame = document.getElementById('previewFrame');
-    const closeModal = document.querySelector('.close-modal');
 
     // Render templates
     function renderTemplates(templatesArray) {
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3 class="template-title">${template.title}</h3>
                     <span class="template-category">${template.category}</span>
                     <p>${template.description}</p>
-                    <button class="preview-button" data-preview="${template.preview}">
+                    <button class="btn btn-preview" data-preview="${template.preview}">
                         <i class="fas fa-eye"></i> Live Preview
                     </button>
                 </div>
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const filtered = templates.filter(template => {
             const matchesSearch = template.title.toLowerCase().includes(searchTerm) ||
                                 template.description.toLowerCase().includes(searchTerm);
-            const matchesCategory = !selectedCategory || template.category === selectedCategory;
+                                const matchesCategory = !selectedCategory || template.category.includes(selectedCategory);
             return matchesSearch && matchesCategory;
         });
 
@@ -46,25 +45,19 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.addEventListener('input', filterTemplates);
     categoryFilter.addEventListener('change', filterTemplates);
 
-    // Modal handling
+    // Preview handling
     templatesGrid.addEventListener('click', (e) => {
-        if (e.target.closest('.preview-button')) {
-            const previewUrl = e.target.closest('.preview-button').dataset.preview;
+        const previewButton = e.target.closest('.btn-preview');
+        if (previewButton) {
+            const previewUrl = previewButton.dataset.preview;
             previewFrame.src = previewUrl;
-            modal.style.display = 'block';
+            previewModal.show();
         }
     });
 
-    closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
+    // Clear iframe when modal is closed
+    document.getElementById('previewModal').addEventListener('hidden.bs.modal', () => {
         previewFrame.src = '';
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            previewFrame.src = '';
-        }
     });
 
     // Initial render
