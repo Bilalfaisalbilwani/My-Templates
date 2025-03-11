@@ -21,7 +21,7 @@
         }
 
         .navbar {
-            background: rgba(31, 31, 50, 0.9) !important;
+            background: rgba(31, 31, 50, 0.95) !important;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -36,9 +36,39 @@
             font-weight: 500;
         }
 
-        .nav-link:hover {
+        .nav-link:hover,
+        .nav-link.active {
             color: #ffcc00 !important;
         }
+
+        /* Ensure navbar toggle icon is visible */
+        .navbar-toggler {
+            border: 1px solid #ffcc00 !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .navbar-toggler-icon {
+            background-image: none !important;
+        }
+
+        .navbar-toggler i {
+            color: #ffcc00;
+            font-size: 24px;
+        }
+
+        /* Mobile navbar dropdown background */
+        .navbar-collapse {
+            background: rgba(31, 31, 50, 0.95);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .navbar-nav .nav-item {
+            text-align: center;
+            padding: 5px 0;
+        }
+
 
         .pricing-card {
             background: linear-gradient(135deg, #2a2a4f, #40407a);
@@ -113,19 +143,18 @@
                 <h2 class="m-0">Quick Website Solution</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-bars"></i> <!-- Custom icon for better visibility -->
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link active"  href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <main class="container py-5">
         <h1 class="text-center mb-5">Choose Your Plan</h1>
         <div class="row justify-content-center g-4">
@@ -136,7 +165,7 @@
                     <ul class="features">
                         <li><i class="fas fa-check"></i> Pre-Designed Website</li>
                         <li><i class="fas fa-check"></i> Three Pages Included</li>
-                        <li><i class="fas fa-check"></i> Product Upload</li>
+                        <li><i class="fas fa-check"></i> 20 Products Upload</li>
                         <li><i class="fas fa-check"></i> Domain & Hosting Setup</li>
                         <li><i class="fas fa-check"></i> Fully Responsive Website</li>
                         <li><i class="fas fa-check"></i> Fast Delivery</li>
@@ -150,9 +179,7 @@
                     <ul class="features">
                         <li><i class="fas fa-check"></i> Pre-Designed Website</li>
                         <li><i class="fas fa-check"></i> Three Pages Included</li>
-                        <li><i class="fas fa-check"></i> Upload 50 Products on Website</li>
-                        <li><i class="fas fa-check"></i> Upload 50 Products on Facebook</li>
-                        <li><i class="fas fa-check"></i> Upload 50 Products on Instagram</li>
+                        <li><i class="fas fa-check"></i> Upload 100 Products on Website</li>
                         <li><i class="fas fa-check"></i> Domain & Hosting Setup</li>
                         <li><i class="fas fa-check"></i> Fully Responsive Website</li>
                         <li><i class="fas fa-check"></i> Fast Delivery</li>

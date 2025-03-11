@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -17,7 +20,7 @@
         }
 
         .navbar {
-            background: rgba(31, 31, 50, 0.9) !important;
+            background: rgba(31, 31, 50, 0.95) !important;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -32,8 +35,37 @@
             font-weight: 500;
         }
 
-        .nav-link:hover {
+        .nav-link:hover,
+        .nav-link.active {
             color: #ffcc00 !important;
+        }
+
+        /* Ensure navbar toggle icon is visible */
+        .navbar-toggler {
+            border: 1px solid #ffcc00 !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .navbar-toggler-icon {
+            background-image: none !important;
+        }
+
+        .navbar-toggler i {
+            color: #ffcc00;
+            font-size: 24px;
+        }
+
+        /* Mobile navbar dropdown background */
+        .navbar-collapse {
+            background: rgba(31, 31, 50, 0.95);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .navbar-nav .nav-item {
+            text-align: center;
+            padding: 5px 0;
         }
 
         h1 {
@@ -67,14 +99,15 @@
             color: #ffcc00;
             margin-bottom: 1rem;
         }
-        /* Navbar active link should have the same color as hover */
-.navbar-nav .nav-item .nav-link.active,
-.navbar-nav .nav-item .nav-link:hover {
-    color: #ffcc00 !important;
-}
 
+        /* Navbar active link should have the same color as hover */
+        .navbar-nav .nav-item .nav-link.active,
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #ffcc00 !important;
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
@@ -82,11 +115,11 @@
                 <h2 class="m-0">Quick Website Solution</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-bars"></i> <!-- Custom icon for better visibility -->
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -94,7 +127,6 @@
             </div>
         </div>
     </nav>
-
     <main class="container py-5">
         <h1>About Our Services</h1>
         <div class="services-grid">
@@ -123,4 +155,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
